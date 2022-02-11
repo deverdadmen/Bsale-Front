@@ -1,8 +1,14 @@
-
+/**
+ * URL_API se utiliza para declarar la direccion a la cual se realizaran las consultas
+ * en este caso la que no esta comentada es la direccion de la appi que se encuentra subida Heroku
+ * y la que esta comentada es la que se utiliza para pruebas locales
+ */
 const URL_API = 'https://bsaleapiback.herokuapp.com'
 //const URL_API = 'http://localhost:3000'
 
-
+/**
+ * ConsutalProductos reazliza la peticion de traer todo los productos que se encuentren registrados
+ */
 const consultarProductos = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/product`)
@@ -15,6 +21,9 @@ const consultarProductos = async() =>{
     
 }
 
+/**
+ * filtrarVategoria Realiza la peticion de los productos de la categoria seleccionada
+ */
 const filtrarCategoria = async(filtro) =>{
     try{
         const respuesta = await fetch(`${URL_API}/filtroCat/${filtro}`)
@@ -27,6 +36,9 @@ const filtrarCategoria = async(filtro) =>{
     
 }
 
+/**
+ * consultarCategorias realiza la peticion de las categorias que se encuentran registradas, para asi poder realizar filtrado
+ */
 const consultarCategorias = async() =>{
 
     try {
@@ -40,6 +52,10 @@ const consultarCategorias = async() =>{
 
 }
 
+/**
+ * buscarProductos recibe el parametro buscado el cual trae lo ingresado en el buscador para poder traer los resultados similares a la busqueda
+ * en el caso que no se encuentren realize una alerta avisando que no se encontraron productos relaziondos
+ */
 const buscarProductos = async(buscado) =>{
 
     try {
@@ -63,7 +79,11 @@ const buscarProductos = async(buscado) =>{
 
 }
 
-
+/**
+ *  ordenarMenor y ordenarMenorFiltrado pide los productos ordenados de menor a mayor
+ *  el primero se utilza cuando se estan mostrando todos los productos y 
+ *  el segundo se utilza cuando los productos se encuentran filtrados por categoria
+ */
 const ordenarMenor = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/menor`)
@@ -87,6 +107,11 @@ const ordenarMenorFiltrado = async(categoria) =>{
     
 }
 
+/**
+ *  ordenarMayor y ordenarMayorFiltrado pide los productos ordenados de mayor a menor
+ *  el primero se utilza cuando se estan mostrando todos los productos y 
+ *  el segundo se utilza cuando los productos se encuentran filtrados por categoria
+ */
 const ordenarMayor = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/mayor`)
@@ -110,7 +135,11 @@ const ordenarMayorFiltrado = async(categoria) =>{
     
 }
 
-
+/**
+ *  ordenarDescuento y ordenarDescuentoFiltrado pide los productos ordenados de mayor descuento a menor descuento
+ *  el primero se utilza cuando se estan mostrando todos los productos y 
+ *  el segundo se utilza cuando los productos se encuentran filtrados por categoria
+ */
 const ordenarDescuento = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/descuento`)
@@ -134,7 +163,11 @@ const ordenarDescuentoFiltrado = async(categoria) =>{
     
 }
 
-
+/**
+ *  ordenarAlfabetico y ordenarAlfabeticoFiltrado pide los productos ordenados de la A a la Z
+ *  el primero se utilza cuando se estan mostrando todos los productos y 
+ *  el segundo se utilza cuando los productos se encuentran filtrados por categoria
+ */
 const ordenarAlfabetico = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/alfabetico`)
