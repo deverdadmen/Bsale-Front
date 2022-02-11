@@ -1,4 +1,6 @@
+
 const URL_API = 'https://bsaleapiback.herokuapp.com'
+//const URL_API = 'http://localhost:3000'
 
 
 const consultarProductos = async() =>{
@@ -32,7 +34,6 @@ const consultarCategorias = async() =>{
         console.log('cat -> ',respuesta)
         const categorias = await respuesta.json()
         cargarCat(categorias);
-        cargarCategorias(categorias);
     } catch (error) {
         console.log(error)
     }
@@ -74,6 +75,18 @@ const ordenarMenor = async() =>{
     }
     
 }
+const ordenarMenorFiltrado = async(categoria) =>{
+    try{
+        const respuesta = await fetch(`${URL_API}/orderby/menor/${categoria}`)
+        console.log('pro ->',respuesta)
+        const productos = await respuesta.json()
+        cargaLista(productos);
+    }catch(error){
+        console.log(error)
+    }
+    
+}
+
 const ordenarMayor = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/mayor`)
@@ -85,6 +98,19 @@ const ordenarMayor = async() =>{
     }
     
 }
+const ordenarMayorFiltrado = async(categoria) =>{
+    try{
+        const respuesta = await fetch(`${URL_API}/orderby/mayor/${categoria}`)
+        console.log('pro ->',respuesta)
+        const productos = await respuesta.json()
+        cargaLista(productos);
+    }catch(error){
+        console.log(error)
+    }
+    
+}
+
+
 const ordenarDescuento = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/descuento`)
@@ -96,9 +122,33 @@ const ordenarDescuento = async() =>{
     }
     
 }
+const ordenarDescuentoFiltrado = async(categoria) =>{
+    try{
+        const respuesta = await fetch(`${URL_API}/orderby/descuento/${categoria}`)
+        console.log('pro ->',respuesta)
+        const productos = await respuesta.json()
+        cargaLista(productos);
+    }catch(error){
+        console.log(error)
+    }
+    
+}
+
+
 const ordenarAlfabetico = async() =>{
     try{
         const respuesta = await fetch(`${URL_API}/orderby/alfabetico`)
+        console.log('pro ->',respuesta)
+        const productos = await respuesta.json()
+        cargaLista(productos);
+    }catch(error){
+        console.log(error)
+    }
+    
+}
+const ordenarAlfabeticoFiltrado = async(categoria) =>{
+    try{
+        const respuesta = await fetch(`${URL_API}/orderby/alfabetico/${categoria}`)
         console.log('pro ->',respuesta)
         const productos = await respuesta.json()
         cargaLista(productos);

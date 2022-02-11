@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bsale Bebidas</title>
-
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -19,8 +17,8 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="productos.js"></script>
-    <script type="text/javascript" src="peticiones.js"></script>
+    <script type="text/javascript" src="/js/productos.js"></script>
+    <script type="text/javascript" src="/js/peticiones.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
@@ -45,29 +43,24 @@
                     </ul>
                   </li>
                 </ul>
-
                 <form class="d-flex">
                     <input class="form-control me-2 search" placeholder="Search" id="formulario" aria-label="Search">
                     <button class="btn btn-outline-success" id="busqueda" type="button">Search</button>
                 </form> 
                 <p>
-                    <img src="cart-shopping-solid.svg" alt="" style="color: black; width: 30px; height: 30px; margin-top: 10px ; ">
+                    <img src="/asset/cart-shopping-solid.svg" alt="" style="color: black; width: 30px; height: 30px; margin-top: 10px ; margin-left: 10px; ">
                 </p>               
-              </div>
-              
+              </div> 
             </div>
         </nav>
     </header>
     <main>
+
         <div class="container">
             <div class="filtros">
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <!-- <select class="form-select" aria-label="Filtro Por Categorias" aria-placeholder="Filtro Por Categorias" name="categorias" id="categorias">
-                            <option disabled selected>Filtro Por Categorias</option>
-                            <option value="all">Todos los Productos</option>
-                          </select> -->
                         </div>
                         <div class="col">
                             <select class="form-select" aria-label="Default select example" name="ordenar" id="ordenar">
@@ -83,7 +76,6 @@
             </div>
             <div class="productos">
                 <div id="galeria" class="gallery"></div>
-                
                 <div class="paginator"></div>                
             </div>
         </div>
